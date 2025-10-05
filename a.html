@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单的GitHub演示页面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+                sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #24292e;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-bottom: 40px;
+            border-radius: 8px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card h2 {
+            color: #24292e;
+            margin-bottom: 15px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+        .button:hover {
+            background-color: #218838;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            color: #666;
+        }
+        .demo-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .count-display {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #0366d6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>GitHub 演示页面</h1>
+            <p>这是一个简单的HTML页面，用于演示如何创建基础的网页并上传到GitHub</p>
+        </header>
+
+        <div class="card">
+            <h2>关于这个页面</h2>
+            <p>这个页面包含了基本的HTML结构、CSS样式和JavaScript交互功能。它展示了如何创建一个美观、响应式的单页网站。</p>
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="编程工作" class="demo-image">
+        </div>
+
+        <div class="card">
+            <h2>互动演示</h2>
+            <p>点击下方按钮来增加计数器的值：</p>
+            <button id="countButton" class="button">点击计数</button>
+            <p>计数: <span id="counter" class="count-display">0</span></p>
+        </div>
+
+        <div class="card">
+            <h2>如何上传到GitHub</h2>
+            <p>要将此页面上传到GitHub，请按照以下步骤操作：</p>
+            <ol>
+                <li>在GitHub上创建一个新的仓库</li>
+                <li>将此HTML文件保存为index.html</li>
+                <li>使用git命令将文件提交并推送到GitHub仓库</li>
+                <li>在仓库设置中启用GitHub Pages功能</li>
+            </ol>
+        </div>
+
+        <footer>
+            <p>&copy; 2023 简单演示页面 | 使用HTML、CSS和JavaScript构建</p>
+        </footer>
+    </div>
+
+    <script>
+        // 简单的计数器功能
+        let count = 0;
+        const countButton = document.getElementById('countButton');
+        const counterDisplay = document.getElementById('counter');
+
+        countButton.addEventListener('click', () => {
+            count++;
+            counterDisplay.textContent = count;
+        });
+
+        // 为页面添加一些动画效果
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                }, 200 * index);
+            });
+        });
+    </script>
+</body>
+</html>
